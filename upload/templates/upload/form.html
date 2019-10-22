@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<form class='form-inline' action='/form' method='POST'>{% csrf_token %}
+    <div class='form-group mb-2'>
+       <input type='text' id='ip' name='ip' placeholder='204.125.100.123' value={{ ip }} />
+       <input type='text' id='username' name='username' placeholder='liam' value={{ username }} />
+       <input type='text' id='password' name='password' placeholder='password' value={{ password }} />
+       <input type='text' id='myfile' name='myfile' value={{ myfile }} />
+       <input type='text' id='cmdlist' name='cmdlist' value={{ cmdlist}} />
+    </div>
+    <div class="form-group mb-2">
+       <input class='btn btn-primary mb-2' type='submit' value='>>>' />
+
+       <textarea id='result' name='result' placeholder='results here' rows="20" cols="80">{{result}}</textarea>
+    </div>
+</form>
+
+{% endblock %}
